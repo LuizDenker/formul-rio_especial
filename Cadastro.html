@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #000;
+    }
+    .card {
+        background-color: rgba(207, 207, 207, 0.459);
+        width: 20rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px); 
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .card h1 {
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 1.9rem;
+        width: 10px;   
+        color: #ffffff;
+        font-style: italic;
+    }
+
+    hr {
+        content: "";
+        display: block;
+        background-color: rgb(24, 12, 185);
+        left: 0;
+        bottom: 0;
+        width: 30px;
+        height: 1px;
+        background-color: #3d07ff;
+        border-radius: 2px;
+        margin-bottom: 1.5rem;
+    }
+
+    input {
+        display: block;
+        width: 94%;
+        font-family: 'Fira Sans', sans-serif;
+        border: 1px solid rgb(18, 3, 153);
+        border-radius: 0.5rem;
+        color: gray;
+        padding: 0.5rem;
+        text-align: left;
+        font-size: small;
+        border: 1px solid rgba(61, 7, 255, 0.5); 
+        color: white; 
+        transition: 0.3s;
+    }
+
+    button {
+        margin-top: 1.1rem;
+        background-color: rgba(26, 1, 255, 0.548);
+        color: white;
+        border: none;
+        padding: 0.5rem 8rem;
+        border-radius: 0.5rem;
+        font-family: 'Saira Sans', sans-serif;
+    }
+    button:hover{
+    background: rgba(47, 0, 255, 0.842);
+    box-shadow: 0 0 10px rgba(61, 7, 255, 0.5); 
+
+    }
+
+    form {
+        display: block;
+        margin: 0.5rem 0;
+        font-size: small;
+        text-align: left;
+        font-family: 'Saira Sans', sans-serif;
+        color: white;
+    }
+
+    input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    input:focus {
+        border-color: #3d07ff;
+        box-shadow: 0 0 10px rgba(61, 7, 255, 0.5); 
+        background: rgba(255, 255, 255, 0.2);
+    }
+</style>
+
+<body style="background-image: url('c4ae9df6ba76f0808bbb965c6c6346d4.gif');">
+    <section>
+        <div class="card">
+            <h1>Cadastrar</h1>
+            <hr>
+
+            <form for="name" id="Name">Name</form>
+            <input type="text" id="nome" placeholder="Digite seu nome">
+
+            <form for="Email" id="Email">Email</form>
+            <input type="email" id="email" placeholder="seu@email.com">
+
+            <form for="Senha" id="Senha">Senha</form>
+            <input type="password" id="senha" placeholder="******">
+
+            <button type="submit">Cadastrar</button>
+        </div>
+    </section>
+
+    <script>
+        const formulario = document.getElementById('meuFormulario');
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            if (nome === '' || email === '' || senha === '') {
+                alert('Ops! Por favor, preencha todos os campos.');
+            } else {
+                alert('Excelente! ' + nome + ', seu cadastro foi realizado.');
+                console.log('Dados salvos:', {nome, email, senha});
+            }
+        });
+    </script>
+</body>
+</html>
